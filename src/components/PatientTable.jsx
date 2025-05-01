@@ -69,7 +69,7 @@ const PatientTable = ({ patients, onStatusUpdate, onSaveReport }) => {
       setSelectedPatient(patient);
       
       // Check for existing report
-      const response = await fetch(`http://localhost:5000/api/reports/patient/${patient._id}`);
+      const response = await fetch(`https://labbackend-os6o.onrender.com/api/reports/patient/${patient._id}`);
       if (response.ok) {
         const data = await response.json();
         if (data && data.length > 0) {
@@ -112,7 +112,7 @@ const PatientTable = ({ patients, onStatusUpdate, onSaveReport }) => {
   const handlePrintReport = async (patient) => {
     try {
       // Fetch the report data for this patient
-      const response = await fetch(`http://localhost:5000/api/reports/patient/${patient._id}`);
+      const response = await fetch(`https://labbackend-os6o.onrender.com/api/reports/patient/${patient._id}`);
       if (response.ok) {
         const reportData = await response.json();
         

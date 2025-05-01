@@ -19,11 +19,11 @@ const Dashboard = () => {
         setLoading(true);
         
         // Fetch patients
-        const patientsResponse = await fetch('http://localhost:5000/api/patients');
+        const patientsResponse = await fetch('https://labbackend-os6o.onrender.com/api/patients');
         const patientsData = await patientsResponse.json();
         
         // Fetch reports
-        const reportsResponse = await fetch('http://localhost:5000/api/reports');
+        const reportsResponse = await fetch('https://labbackend-os6o.onrender.com/api/reports');
         const reportsData = await reportsResponse.json();
         
         setPatients(patientsData);
@@ -45,7 +45,7 @@ const Dashboard = () => {
 
   const handleStatusUpdate = async (patientId, statusType, completed) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/patients/status/${patientId}`, {
+      const response = await fetch(`https://labbackend-os6o.onrender.com/api/patients/status/${patientId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -67,8 +67,8 @@ const Dashboard = () => {
   const handleSaveReport = async (patientId, reportData, reportId = null) => {
     try {
       const url = reportId 
-        ? `http://localhost:5000/api/reports/${reportId}`
-        : 'http://localhost:5000/api/reports/create';
+        ? `https://labbackend-os6o.onrender.com/api/reports/${reportId}`
+        : 'https://labbackend-os6o.onrender.com/api/reports/create';
       
       const method = reportId ? 'PUT' : 'POST';
       
@@ -99,7 +99,7 @@ const Dashboard = () => {
 
   const handlePrintReport = async (patientId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/reports/patient/${patientId}`);
+      const response = await fetch(`https://labbackend-os6o.onrender.com/api/reports/patient/${patientId}`);
       if (response.ok) {
         const data = await response.json();
         if (data && data.length > 0) {

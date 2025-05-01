@@ -50,7 +50,7 @@ const ReportModal = ({ patient, onClose, onSaveSuccess }) => {
       try {
         setLoading(true);
         const response = await fetch(
-          `http://localhost:5000/api/reports/patient/${patient._id}`
+          `https://labbackend-os6o.onrender.com/api/reports/patient/${patient._id}`
         );
         if (response.ok) {
           const data = await response.json();
@@ -127,8 +127,8 @@ const ReportModal = ({ patient, onClose, onSaveSuccess }) => {
 
     try {
       const url = existingReport
-        ? `http://localhost:5000/api/reports/${existingReport._id}`
-        : "http://localhost:5000/api/reports/create";
+        ? `https://labbackend-os6o.onrender.com/api/reports/${existingReport._id}`
+        : "https://labbackend-os6o.onrender.com/api/reports/create";
 
       const method = existingReport ? "PUT" : "POST";
 
