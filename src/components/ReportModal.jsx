@@ -152,9 +152,9 @@ const ReportModal = ({ patient, onClose, onSaveSuccess }) => {
 
       const data = await response.json();
       setSuccess(true);
-      
+
       // Call onSaveSuccess if it exists
-      if (typeof onSaveSuccess === 'function') {
+      if (typeof onSaveSuccess === "function") {
         onSaveSuccess(data.report);
       }
 
@@ -285,8 +285,12 @@ const ReportModal = ({ patient, onClose, onSaveSuccess }) => {
         </div>
         <div className="flex items-center">
           <div className="flex space-x-2">
-            <div className="w-8 h-8 bg-blue-100 rounded-full"></div>
-            <div className="w-8 h-8 bg-blue-100 rounded-full"></div>
+            <div className="w-8 h-8 bg-blue-100 rounded-full overflow-hidden flex items-center justify-center">
+              <img src="/NABL.png" className="w-full h-full object-cover" />
+            </div>
+            <div className="w-8 h-8 bg-blue-100 rounded-full overflow-hidden flex items-center justify-center">
+              <img src="/ISO.png" className="w-full h-full object-cover" />
+            </div>
           </div>
         </div>
       </div>
@@ -395,7 +399,7 @@ const ReportModal = ({ patient, onClose, onSaveSuccess }) => {
           {renderPatientInfo()}
 
           <div className="text-center font-bold my-2 print:my-1">
-            <h3 className="text-lg print:text-base">Haemological Report</h3>
+            <h3 className="text-lg print:text-base">Haematology Report</h3>
           </div>
 
           {/* Status messages - hide on print */}
@@ -408,8 +412,8 @@ const ReportModal = ({ patient, onClose, onSaveSuccess }) => {
                   </div>
                   <div className="ml-3">
                     <p className="text-sm font-medium text-green-800">
-                      Report {existingReport ? "updated" : "created"} successfully. 
-                      This window will close automatically.
+                      Report {existingReport ? "updated" : "created"}{" "}
+                      successfully. This window will close automatically.
                     </p>
                   </div>
                 </div>
