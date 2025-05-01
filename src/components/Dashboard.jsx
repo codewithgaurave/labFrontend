@@ -152,7 +152,7 @@ const Dashboard = () => {
         </div>
       </nav>
       
-      <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto py-0 px-4 sm:px-6 lg:px-8">
         <div className="bg-white shadow-md rounded-lg p-6 mb-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
             <h1 className="text-2xl font-bold text-gray-800 mb-4 md:mb-0">LAB Dashboard</h1>
